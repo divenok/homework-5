@@ -124,6 +124,7 @@ img {
   display: flex;
   align-items: center;
 }
+
 .menu-nav-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -133,6 +134,19 @@ img {
   line-height: var(--primary-line-height);
   letter-spacing: 0.02em;
   color: var(--primary-text-color-theme-light);
+}
+.menu-nav-link::after {
+  content: "";
+  display: block;
+  
+  margin-top: 28px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  height: 4px;
+  border-radius: 2px;
+
+  background-color: #2196f3;
 }
 .current,
 .menu-nav-link:hover,
