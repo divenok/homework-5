@@ -558,10 +558,13 @@ img {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1), opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1), visibility 1000ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .backdrop.is-hidden {
   opacity: 0;
+  transform: scale(0.5);
   visibility: hidden;
   pointer-events: none;
 }
@@ -583,17 +586,17 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
- position: absolute;
- top: 8px;
- right: 8px;
- width: 30px;
- height: 30px;
- padding: 0;
- border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 50%;
 
- background-color: var(--primary-text-color-theme-dark);
- border: 1px solid rgba(0, 0, 0, 0.1);
- cursor: pointer;
+  background-color: var(--primary-text-color-theme-dark);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
   
   
@@ -657,6 +660,7 @@ img {
 .projects-item {
   flex-basis: calc((100% - (3 * 30px)) / 3);
   background: var(--primary-text-color-theme-dark);
+  
 }
 .projects-item-content {
   padding: 20px 24px;
@@ -673,12 +677,31 @@ img {
 .projects-item-link {
   display: block;
   margin: 0 auto;
-  
+  overflow: hidden;
 }
 .projects-item-link:hover,
 .projects-item-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.projects-item-link:hover .projects-thumb::before,
+.projects-item-link:focus .projects-thumb::before{
+  
+  transform: translateY(0);
+}
+.projects-thumb {
+  position: relative;
+}
+.projects-thumb::before {
+  display: inline-block;
+  content: "";
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  
+  transform: translateY(100%);
+  transition: transfor 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projects-item-titel {
   margin-bottom: 4px;
