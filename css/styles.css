@@ -560,7 +560,7 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   transform: scale(1);
-  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1), opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1), visibility 1000ms cubic-bezier(0.4, 0, 0.2, 1); 
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), visibility 500ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -677,31 +677,34 @@ img {
 .projects-item-link {
   display: block;
   margin: 0 auto;
-  overflow: hidden;
+  cursor: pointer;
 }
 .projects-item-link:hover,
 .projects-item-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.projects-item-link:hover .projects-thumb::before,
-.projects-item-link:focus .projects-thumb::before{
-  
+.projects-item-link:hover .projects-thumb::after,
+.projects-item-link:focus .projects-thumb::after {
   transform: translateY(0);
+  
 }
 .projects-thumb {
   position: relative;
+  overflow: hidden;
 }
-.projects-thumb::before {
+.projects-thumb::after {
   display: inline-block;
   content: "";
   position:absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  transform: translateY(100%);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: rgba(33, 150, 243, 0.9);
   
-  transform: translateY(100%);
-  transition: transfor 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projects-item-titel {
   margin-bottom: 4px;
