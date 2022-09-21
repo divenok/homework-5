@@ -145,7 +145,7 @@ img {
   display: block;
   position: absolute;
   width: 100%;
-  margin-top: 28px;
+  bottom: -34px;;
   margin-left: auto;
   margin-right: auto;
   
@@ -353,6 +353,7 @@ img {
   background: rgba(47, 48, 58, 0.8);
 }
 .label-titel {
+  margin: 0;
   font-weight:var(--secondary-font-weight);
  
   text-transform: uppercase;
@@ -693,6 +694,7 @@ img {
   position: relative;
   overflow: hidden;
 }
+
 .projects-thumb::after {
   display: inline-block;
   content: "";
@@ -706,6 +708,31 @@ img {
   background-color: rgba(33, 150, 243, 0.9);
   
 }
+.projects-description { 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 322px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.projects-item-link:hover .projects-description {
+  opacity: 1 cubic-bezier(0.4, 0, 0.2, 1);
+}
+.description {
+  margin: 0;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+/* or 156% */
+
+letter-spacing: 0.03em;
+
+color: #FFFFFF;
+
+}    
 .projects-item-titel {
   margin-bottom: 4px;
   font-family: var(--primary-font-family);
